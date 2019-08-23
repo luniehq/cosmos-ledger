@@ -1,5 +1,6 @@
 import App from 'ledger-cosmos-js'
-import { getCosmosAddress } from '@lunie/cosmos-keys'
+import * as CryptoJS from 'crypto-js'
+import * as bech32 from 'bech32'
 import { signatureImport } from 'secp256k1'
 import TransportU2F from '@ledgerhq/hw-transport-u2f'
 const semver = require('semver')
@@ -211,4 +212,19 @@ export const checkAppMode = (testModeAllowed: Boolean, testMode: Boolean) => {
       `DANGER: The Cosmos Ledger app is in test mode and shouldn't be used on mainnet!`
     )
   }
+}
+
+// converts a string to a bech32 version of that string which shows a type and has a checksum
+function bech32ify(address: string, prefix: string) {
+  const words = bech32.toWords(Buffer.from(address, 'hex'))
+  return bech32.encode(prefix, words)
+}
+
+// NOTE: this only works with a compressed public key (33 bytes)
+function getCosmosAddress(publicKey: Buffer): string {
+  const message = CryptoJS.enc.Hex.parse(publicKey.toString('hex'))
+  const address = CryptoJS.RIPEMD160(CryptoJS.SHA256(message) as any).toString()
+  const cosmosAddress = bech32ify(address, `cosmos`)
+
+  return cosmosAddress
 }
