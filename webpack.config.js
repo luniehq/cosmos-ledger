@@ -1,3 +1,5 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 const config = {
   devtool: "cheap-source-map",
   entry: ['./src/cosmos-ledger.ts'],
@@ -27,6 +29,13 @@ const config = {
         exclude: /node_modules/
       }
     ]
-  }
+  },
+  plugins: [
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: 'bundle_sizes.html'
+    })
+  ]
 }
-module.exports = config;
+module.exports = config
