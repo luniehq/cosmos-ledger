@@ -1,4 +1,4 @@
-import { cosmosApp as App, getBech32FromPK } from 'ledger-cosmos-js'
+import { CosmosApp as App, getBech32FromPK } from 'ledger-cosmos-js'
 
 import { signatureImport } from 'secp256k1'
 import TransportU2F from '@ledgerhq/hw-transport-u2f'
