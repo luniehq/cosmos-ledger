@@ -82,53 +82,17 @@ export default class Ledger {
     getBrowser(this.userAgent)
 
     let transport
-    if (isWindows(this.platform)) {
-      if (!navigator.hid) {
-        throw new Error(
-          `Your browser doesn't have HID enabled. Please enable this feature by visiting: chrome://flags/#enable-experimental-web-platform-features`
-        )
-      }
-
-      const { default: TransportWebHID } = await import(
-        /* webpackChunkName: "webhid" */ '@ledgerhq/hw-transport-webhid'
+    // Now we use WebHID for all OS, also Linux and OSX
+    if (!navigator.hid) {
+      throw new Error(
+        `Your browser doesn't have HID enabled. Please enable this feature by visiting: chrome://flags/#enable-experimental-web-platform-features`
       )
-      transport = await TransportWebHID.create(timeout * 1000)
     }
-    // OSX / Linux
-    else {
-      try {
-        const { default: TransportWebUSB } = await import(
-          /* webpackChunkName: "webusb" */ '@ledgerhq/hw-transport-webusb'
-        )
-        transport = await TransportWebUSB.create(timeout * 1000)
-      } catch (err) {
-        /* istanbul ignore next: specific error rewrite */
-        if (err.message.trim().startsWith('No WebUSB interface found for your Ledger device')) {
-          throw new Error(
-            "Couldn't connect to a Ledger device. Please use Ledger Live to upgrade the Ledger firmware to version 1.5.5 or later."
-          )
-        }
-        /* istanbul ignore next: specific error rewrite */
-        if (err.message.trim().startsWith('Unable to claim interface')) {
-          // apparently can't use it in several tabs in parallel
-          throw new Error('Could not access Ledger device. Is it being used in another tab?')
-        }
-        /* istanbul ignore next: specific error rewrite */
-        if (err.message.trim().startsWith('Not supported')) {
-          // apparently can't use it in several tabs in parallel
-          throw new Error(
-            "Your browser doesn't seem to support WebUSB yet. Try updating it to the latest version."
-          )
-        }
-        /* istanbul ignore next: specific error rewrite */
-        if (err.message.trim().startsWith('No device selected')) {
-          // apparently can't use it in several tabs in parallel
-          throw new Error(
-            "You did not select a Ledger device. If you didn't see your Ledger, check if the Ledger is plugged in and unlocked."
-          )
-        }
-      }
-    }
+
+    const { default: TransportWebHID } = await import(
+      /* webpackChunkName: "webhid" */ '@ledgerhq/hw-transport-webhid'
+    )
+    transport = await TransportWebHID.create(timeout * 1000)
 
     const cosmosLedgerApp = new CosmosLedgerApp(transport)
     this.cosmosApp = cosmosLedgerApp
