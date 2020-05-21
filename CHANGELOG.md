@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 <!-- SIMSALA --> <!-- DON'T DELETE, used for automatic changelog updates -->
 
+## [0.1.8] - 2020-05-21
+
+### Security
+
+- Fix resolution of dependency @faboweb
+
+### Code Improvements
+
+- Updated several libraries including Ledger transportation @faboweb
+
 ## [0.1.7] - 2020-02-01
 
 ### Fixed
