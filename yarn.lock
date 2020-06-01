@@ -660,9 +660,9 @@
   integrity sha512-ZlLhR7qaChPgEbvcqOptRepWGm8VhhwOM6kC1gx3WErutbtaOjUX8lLA4ButWFU2f+xTl2rS/5c86wC7qGqGXQ==
 
 "@ledgerhq/hw-transport-webhid@^5.7.0":
-  version "5.15.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webhid/-/hw-transport-webhid-5.15.0.tgz#26ec2a169f28e4a38874a05a1b483202cb6780b4"
-  integrity sha512-OkzSp5YREd++hI7ZDmnKfcYfBB97OdwrnzOVn/yjzg4W6+sFOpoirSQqBPkdiFcBNZFOZzF9CJ+p6SYBHhR5Bw==
+  version "5.16.0"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webhid/-/hw-transport-webhid-5.16.0.tgz#25d2a1014f065c40b1f39e19ab1b633aaadb6d1b"
+  integrity sha512-pivL73EGGY1dIAk6DSmUo4aI7w+jDI2hWizHSJO5OTuwi+D9FCFH2FdxXb/oxqSPsQDvfUNQI7pEALU65ilrCQ==
   dependencies:
     "@ledgerhq/devices" "^5.15.0"
     "@ledgerhq/errors" "^5.15.0"
