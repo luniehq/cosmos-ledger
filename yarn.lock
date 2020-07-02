@@ -660,14 +660,14 @@
   integrity sha512-UrRS1xZ/UidIrGyM+h/T/h57DpiFgfqMtlu5VBic1LbekNUojBPx0cMb099p07uyEwKggfawzbdLmxv4j9Ct+g==
 
 "@ledgerhq/hw-transport-webhid@^5.7.0":
-  version "5.17.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webhid/-/hw-transport-webhid-5.17.0.tgz#c4a6e9df0c9fcebce814e959529c12e6c3d35524"
-  integrity sha512-B7naykDwW+0a4B74v8ume5TStFQdmkSv7MmPzz+zrGLKON4r01zcKNZcRLlWZWOT3xOX++E7gHvTcFa6hWwEaw==
+  version "5.19.0"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webhid/-/hw-transport-webhid-5.19.0.tgz#48b5e3c94c710cace39af8954796480c942c95f2"
+  integrity sha512-D3f46bM5d73dXyZXO4hwnXIytU1xU4YJ1xNJP0a81xd8XyvD4TtzePqYebhX0myEb2qZYWJAtcVtm9ARLCtwyA==
   dependencies:
-    "@ledgerhq/devices" "^5.17.0"
-    "@ledgerhq/errors" "^5.17.0"
-    "@ledgerhq/hw-transport" "^5.17.0"
-    "@ledgerhq/logs" "^5.17.0"
+    "@ledgerhq/devices" "^5.19.0"
+    "@ledgerhq/errors" "^5.19.0"
+    "@ledgerhq/hw-transport" "^5.19.0"
+    "@ledgerhq/logs" "^5.19.0"
 
 "@ledgerhq/hw-transport-webusb@^5.7.0":
   version "5.19.0"
