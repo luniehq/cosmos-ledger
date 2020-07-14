@@ -670,14 +670,14 @@
     "@ledgerhq/logs" "^5.19.1"
 
 "@ledgerhq/hw-transport-webusb@^5.7.0":
-  version "5.19.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webusb/-/hw-transport-webusb-5.19.0.tgz#f103f3bd79fe0b78b3d70c98d45fd61d5dc09bf3"
-  integrity sha512-dGMhrj8mHhV41QEyAnQp2hETCh62yW6sEi1uH33Z4i3i/MYAOAsILrTSTle4eGYpbyibpXLCo3izeXmR1UQ8+w==
+  version "5.19.1"
+  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-webusb/-/hw-transport-webusb-5.19.1.tgz#d593c4cfcf6865e8a0594c7708602e614113f7a6"
+  integrity sha512-zY9fkZ01Y9ZbTeQLVkYZ6t/PexKGKYTpkEcICka5/fqeqegEWL7yX1YW34ML+P37Z3j3hXzpR/awd+qIPLvVqA==
   dependencies:
-    "@ledgerhq/devices" "^5.19.0"
-    "@ledgerhq/errors" "^5.19.0"
-    "@ledgerhq/hw-transport" "^5.19.0"
-    "@ledgerhq/logs" "^5.19.0"
+    "@ledgerhq/devices" "^5.19.1"
+    "@ledgerhq/errors" "^5.19.1"
+    "@ledgerhq/hw-transport" "^5.19.1"
+    "@ledgerhq/logs" "^5.19.1"
 
 "@ledgerhq/hw-transport@^4.77.0":
   version "4.78.0"
