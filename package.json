@@ -29,7 +29,7 @@
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf lib",
-    "build": "npx tsc src/cosmos-ledger.ts --outDir lib --sourceMap --declaration",
+    "build": "npx tsc src/cosmos-ledger.ts --outDir lib --sourceMap --declaration --declarationDir lib/types",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
